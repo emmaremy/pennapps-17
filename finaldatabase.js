@@ -1,5 +1,5 @@
 // TODO: Replace with your Firebase app
-var myFirebaseApp = "vivid-inferno-2578";
+var myFirebaseApp = "pennapps2017-e83e4";
 var MAXROWS = 10;
 
 // Reference to the reviews object in your Firebase
@@ -9,20 +9,17 @@ var reviews = new Firebase("https://" + myFirebaseApp + ".firebaseio.com/reviews
 var submitreview = function () {
 
   // Get input values from each of the form elements
-  var company = $("#revCompany").val();
-  var loc = $("#revLoc").val();
-  var age = $("#revAge").val();
-  var salary = $("#revSalary").val();
-  var rating = $("#revRating").val();
-  var positives = $("#revPos").val();
-  var negatives = $("#revNeg").val();
-  var field = $("#revField").val();
+  var firstname = $("#revCompany").val();
+  var lastname = $("#revLoc").val();
+  var contact = $("#revAge").val();
+  var services = $("#revField").val();
+  var notes = $("#revNeg").val();
 
   // // Push a new review to the database using those values
   reviews.push({
-    "company": company,
-    "loc": loc,
-    "age": age,
+    "firstname": firstname,
+    "lastname": lastname,
+    "contact": contact,
     "salary": salary,
     "rating": rating,
     "positives": positives,
@@ -34,11 +31,11 @@ var submitreview = function () {
   var addReviewRow = function (review) {
     // Build the HTML string that represents this new row and the data it shows
     var html = "<tr>\
-      <td>" + review.age + "</td>\
-      <td>" + review.company + "</td>\
+      <td>" + review.contact + "</td>\
+      <td>" + review.firstname + "</td>\
       <td>" + review.field + "</td>\
       <td>" + review.salary + "</td>\
-      <td>" + review.loc + "</td>\
+      <td>" + review.lastname + "</td>\
       <td>" + review.rating + "</td>\
       <td>" + review.positives + "</td>\
       <td>" + review.negatives + "</td>\
@@ -58,7 +55,7 @@ var submitreview = function () {
 // Get the single most recent review from the database and
 // update the table with its values. This is called every time the child_added
 // event is triggered on the reviews Firebase reference, which means
-// that this will update EVEN IF you don't refresh the page. Magic.
+// that this will update EVEN IF you don't refresh the pcontact. Magic.
 reviews.limitToLast(MAXROWS).on('child_added', function(childSnapshot) {
   // Get the review data from the most recent snapshot of data
   // added to the reviews list in Firebase
@@ -69,9 +66,9 @@ reviews.limitToLast(MAXROWS).on('child_added', function(childSnapshot) {
   addReviewRow(review);
   
 
-  // $("#company").html(review.company)
-  // $("#loc").html(review.loc)
-  // $("#age").html(review.age)
+  // $("#firstname").html(review.firstname)
+  // $("#lastname").html(review.lastname)
+  // $("#contact").html(review.contact)
   // $("#salary").html(review.salary)
   // $("#rating").html(review.rating)
   // $("#positives").html(review.positives)
