@@ -5,6 +5,13 @@
 <!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
 <!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
 	<head>
+
+<!-- loading firebase scripts -->
+
+	<script src="https://www.gstatic.com/firebasejs/3.1.0/firebase.js"></script>
+    <script src="https://code.jquery.com/jquery-2.2.0.min.js"></script>
+
+<!-- -->
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<title>Voltage &mdash; 100% Free Fully Responsive HTML5 Template by FREEHTML5.co</title>
@@ -66,14 +73,11 @@
 	<script src="js/respond.min.js"></script>
 	<![endif]-->
 
-
-	<link rel="stylesheet" href="/path/to/leaflet.css" />
-	<script src="/path/to/leaflet.js"></script>
-
-
 	</head>
 	<body>
-	
+
+    <script src="database.js"></script> 
+
 	<div id="fh5co-page">
 		<nav class="fh5co-nav-style-1" role="navigation" data-offcanvass-position="fh5co-offcanvass-left">
 			<div class="container">
@@ -128,6 +132,50 @@
 			<div class="container">
 				<div class="row p-b">
 					<div class="col-md-6 col-md-offset-3 text-center">
+						<div class="main-content">
+                <!-- You only need this form and the form-basic.css -->
+                <form id="peopleForm" class="form-basic">
+                    <div class="form-title-row">
+                        <h1>Enter your information</h1>
+                    </div>
+                    <div class="form-row">
+                        <label>
+                            <span>First Name</span>
+                            <input type="text" name="firstname" id="revFirst">
+                        </label>
+                    </div>
+                    <div class="form-row">
+                        <label>
+                            <span>Last Name</span>
+                            <input type="text" name="lastname" id="revLast">
+                        </label>
+                    </div>
+                    <div class="form-row">
+                        <label>
+                            <span>Contact </span>
+                            <input type="text" name="contact" id="revContact">
+                        </label>
+                    </div>
+                    <div class="form-row">
+                        <label><span>Services</span></label>
+                        <input type="text" name="services" id="revServices" list="datalist1">
+                        <datalist id="datalist1">
+                            <option value="Walk to clinic"></option>
+                            <option value="Drive to clinic"></option>
+                        </datalist>
+                    </div>
+                    <div class="form-row">
+                        <label>
+                            <span>Other info:</span>
+                            <input type="text" name="notes" id="revNotes">
+                        </label>
+                    </div>
+                </div>
+            <div class="form-row">
+                <!-- <button type="submit">Submit Form</button> -->
+                <button type="submit" class="btn btn-default">Submit</button>
+            </div>
+            </form>
 						<h2 class="fh5co-heading wow fadeInUp" data-wow-duration="1s" data-wow-delay=".5s">Why Choose Us</h2>
 						<p class="wow fadeInUp" data-wow-duration="1s" data-wow-delay=".8s">Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. Separated they live in Bookmarksgrove right at the coast of the Semantics.</p>
 					</div>
