@@ -29,16 +29,19 @@ var submitPerson = function () {
 
 // Push our first recommendation to the end of the list and assign it a
 // unique ID automatically.
-	people.push({
-	    "firstname": firstname,
-	    "lastname": lastname,
-	    "contact": contact,
-            "zipcode": zipcode,
-            //"services":services,
-	    "walk": walk,
-            "drive": drive,
-	    "notes": notes,
-	});
+
+    people.push({
+        "firstname": firstname,
+        "lastname": lastname,
+        "contact": contact,
+        "zipcode": zipcode,
+        //"services":services,
+        "walk": walk,
+        "drive": drive,
+        "notes": notes,
+        "id": Date.now()
+    });
+
 };
 
 $(window).load(function () {
@@ -60,14 +63,14 @@ var addPersonRow = function (person) {
         "</td> <td>" + getServicesString(person) + 
         "</td> <td>" + person.notes + 
         "</td> <td>" + "<button id='contact_button' class='btn btn-success btn-sm btn-outline' onclick='showForm(person)'>Contact</button>" +      
-        "</tr>" + "<div id ='contact_form'>HI THERE</div>"
+        "</tr>" + "<div id =" + "'" + (person.id).toString() + "'" + ">HI THERE</div>"
     $("#people_table").append(html);
 
 };
 
 var showForm = function (person) {
     var button = document.getElementById('contact_button');
-    var form = document.getElementById('contact_form');
+    var form = document.getElementById((person.id).toString());
     if (button.clicked == true) {
         form.style.display = 'block';
     } else {
@@ -76,7 +79,7 @@ var showForm = function (person) {
 }
 
 var getServicesString = function (person) {
-    
+    console.log(person.id)
     var services = "I'm available to";
 
     var services_list = [];
