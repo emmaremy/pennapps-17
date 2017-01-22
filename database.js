@@ -49,14 +49,7 @@ $(window).load(function () {
 
 people.limitToLast(10).on('child_added', function(childSnapshot) {
     person = childSnapshot.val();
-
     addPersonRow(person);
-
-    //$("#name").html(person.firstname)
-    //$("#zipcode").html(person.zipcode) 
-    //$("#services").html(getServicesString(person))
-    //$("#notes").html(person.notes)
-
 });
 
 
@@ -66,7 +59,7 @@ var addPersonRow = function (person) {
         "</td> <td>" + person.zipcode + 
         "</td> <td>" + getServicesString(person) + 
         "</td> <td>" + person.notes + 
-        "</td> <td>" + " contact filler" + 
+        "</td> <td>" + "<button class='btn btn-success btn-sm btn-outline'>Contact</button>" +      
         "</tr>";
 
     $("#people_table").append(html);
