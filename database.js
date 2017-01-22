@@ -83,6 +83,7 @@ var showForm = function (person) {
 
 var enterContactId = function (id) {
     document.getElementById("revID").value=id;
+    document.theirEmail =contact
 }
 
 var getServicesString = function (person) {

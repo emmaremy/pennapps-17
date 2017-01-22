@@ -278,44 +278,6 @@
                         </tr> -->
                     </tbody>
                 </table>
-
-<!--
-				<div class="row">
-					<div class="col-md-3 col-sm-6 col-xs-6 col-xxs-12 wow fadeInLeft" data-wow-duration="1s" data-wow-delay=".5s">
-						<a href="#" class="link-block">
-							<figure><img src="images/img_same_dimension_1.jpg" alt="Image" class="img-responsive img-rounded"></figure>
-							<h3>Responsive Layout</h3>
-							<p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
-							<p><a href="#" class="btn btn-primary btn-sm">Learn More</a></p>
-						</a>
-					</div>
-					<div class="col-md-3 col-sm-6 col-xs-6 col-xxs-12 wow fadeInLeft" data-wow-duration="1s" data-wow-delay=".8s">
-						<a href="#" class="link-block">
-							<figure><img src="images/img_same_dimension_2.jpg" alt="Image" class="img-responsive img-rounded"></figure>
-							<h3>Retina Ready</h3>
-							<p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
-							<p><a href="#" class="btn btn-primary btn-sm">Learn More</a></p>
-						</a>
-					</div>
-					<div class="clearfix visible-sm-block"></div>
-					<div class="col-md-3 col-sm-6 col-xs-6 col-xxs-12 wow fadeInLeft" data-wow-duration="1s" data-wow-delay="1.1s">
-						<a href="#" class="link-block">
-							<figure><img src="images/img_same_dimension_3.jpg" alt="Image" class="img-responsive img-rounded"></figure>
-							<h3>Creative UI Design</h3>
-							<p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
-							<p><a href="#" class="btn btn-primary btn-sm">Learn More</a></p>
-						</a>
-					</div>
-					<div class="col-md-3 col-sm-6 col-xs-6 col-xxs-12 wow fadeInLeft" data-wow-duration="1s" data-wow-delay="1.4s">
-						<a href="#" class="link-block">
-							<figure><img src="images/img_same_dimension_4.jpg" alt="Image" class="img-responsive img-rounded"></figure>
-							<h3>Responsive Layout</h3>
-							<p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
-							<p><a href="#" class="btn btn-primary btn-sm">Learn More</a></p>
-						</a>
-					</div>
-
--->
 				</div>
 			</div>
 		</div>
@@ -371,7 +333,7 @@
                     <div class="form-row">
                         <label>
                             <span>Your Name:</span><br>
-                            <input type="text" name="yourname" id="revName">
+                            <input type="text" name="yourName" id="revName">
                         </label>
                     </div><p>
                     <div class="form-row">
@@ -383,7 +345,7 @@
                     <div class="form-row">
                     	<label>
                     		<span>Message</span><br>
-                    		<input type="text" name="message" id="revMessage">
+                    		<input type="text" name="yourMessage" id="revMessage">
                     	</label>
                     </div><p>
                     <div class="form-row">
@@ -394,10 +356,27 @@
                     </div><p>
             <div class="form-row">
                 <!-- <button type="submit">Submit Form</button> -->
-                <button type="submit" class="btn btn-default">Submit</button>
+                <a href="#" onclick="emailJS()"><button type="submit" class="btn btn-default">Submit</button></a>
             </div>
 
             </form>
+            <!-- EMAIL JS -->
+
+					<script type="text/javascript">
+						function emailJS(){
+							console.log("hi")
+							// Change to your service ID, or keep using the default service
+							var service_id = "default_service";
+							var template_id = "test";
+							emailjs.send(service_id,template_id,{yourName: "hi", 
+								toEmail: "eliu827@gmail.com",
+								fromEmail: "eliu2@swarthmore.edu",
+								yourMessage: "Check this out!"
+							});
+						}
+					</script>
+			<!-- EMAIL JS -->
+
  						</div>
  					</div>
  				</div>
