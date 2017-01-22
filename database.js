@@ -23,9 +23,13 @@ var submitPerson = function () {
   
   //var services = $("#revServices").val();
   var walk = $("#revWalk").is(':checked');
+  var accompany = $("revAccompany").is('checked');
   var drive = $("#revDrive").is(':checked');
+  var pickup = $("#revPickup").is(':checked');
+  var coffee = $("revCoffee").is(':checked');
+  var ed = $("revEd").is(':checked');
+  var resource = $("revResource").is(':checked');
   var notes = $("#revNotes").val();
-
 
 // Push our first recommendation to the end of the list and assign it a
 // unique ID automatically.
@@ -37,7 +41,12 @@ var submitPerson = function () {
         "zipcode": zipcode,
         //"services":services,
         "walk": walk,
+        "accompany": accompany,
         "drive": drive,
+        "pickup": pickup,
+        "coffee": coffee,
+        "ed": ed,
+        "resource": resource,
         "notes": notes,
         "id": Date.now()
     });
@@ -95,6 +104,21 @@ var getServicesString = function (person) {
     }
     if (person.drive) {
         services_list.push("drive you to a clinic or medical appointment");
+    }
+    if (person.accompany) {
+        services_list.push("accompany you to a station or other location if you feel unsafe");
+    }
+    if (person.pickup) {
+        services_list.push("pickup something for you from a pharmacy or grocery store");
+    }
+    if (person.coffee) {
+        services_list.push("meet you for coffee, to chat or to listen");
+    }
+    if (person.ed) {
+        services_list.push("teach you about healthy relationships and contraception");
+    }
+    if (person.resource) {
+        services_list.push("help you find resources to get out of a unsafe situation");
     }
 
     for (i = 0; i < services_list.length; i++) {
