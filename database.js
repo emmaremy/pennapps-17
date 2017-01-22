@@ -26,6 +26,7 @@ var submitPerson = function () {
   var drive = $("#revDrive").is(':checked');
   var notes = $("#revNotes").val();
 
+
 // Push our first recommendation to the end of the list and assign it a
 // unique ID automatically.
 	people.push({
@@ -65,7 +66,8 @@ var addPersonRow = function (person) {
         "</td> <td>" + person.zipcode + 
         "</td> <td>" + getServicesString(person) + 
         "</td> <td>" + person.notes + 
-        "</td> </tr>";
+        "</td> <td>" + " contact filler" + 
+        "</tr>";
 
     $("#people_table").append(html);
 
