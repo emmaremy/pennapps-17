@@ -20,8 +20,10 @@ var submitPerson = function () {
   var lastname = $("#revLast").val();
   var contact = $("#revContact").val();
   var zipcode = $("#revZipcode").val();
-  var walk = $("#revWalk").val();
-  var drive = $("#revDrive").val();
+  
+  //var services = $("#revServices").val();
+  var walk = $("#revWalk").is(':checked');
+  var drive = $("#revDrive").is(':checked');
   var notes = $("#revNotes").val();
 
 // Push our first recommendation to the end of the list and assign it a
@@ -30,9 +32,10 @@ var submitPerson = function () {
 	    "firstname": firstname,
 	    "lastname": lastname,
 	    "contact": contact,
-      "zipcode": zipcode,
+            "zipcode": zipcode,
+            //"services":services,
 	    "walk": walk,
-      "drive": drive,
+            "drive": drive,
 	    "notes": notes,
 	});
 };
