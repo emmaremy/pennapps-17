@@ -46,13 +46,53 @@ $(window).load(function () {
 });
 
 
-people.limitToLast(1).on('child_added', function(childSnapshot) {
+people.limitToLast(10).on('child_added', function(childSnapshot) {
     person = childSnapshot.val();
 
-    $("#name").html(person.firstname)
-    $("#zipcode").html(person.zipcode) 
-    $("#services").html(person.services)
-    $("#notes").html(person.notes)
+    addPersonRow(person);
+
+    //$("#name").html(person.firstname)
+    //$("#zipcode").html(person.zipcode) 
+    //$("#services").html(getServicesString(person))
+    //$("#notes").html(person.notes)
 
 });
 
+
+var addPersonRow = function (person) {
+
+    var html = "<tr> <td>" + person.firstname + 
+        "</td> <td>" + person.zipcode + 
+        "</td> <td>" + getServicesString(person) + 
+        "</td> <td>" + person.notes + 
+        "</td> </tr>";
+
+    $("#people_table").append(html);
+
+};
+
+var getServicesString = function (person) {
+    
+    var services = "I'm available to";
+
+    var services_list = [];
+    if (person.walk) {
+        services_list.push("accompany you on a walk to the clinic");
+    }
+    if (person.drive) {
+        services_list.push("drive you to a clinic or medical appointment");
+    }
+
+    for (i = 0; i < services_list.length; i++) {
+        services += " " + services_list[i];
+        
+        if (i < services_list.length - 1 && services_list.length > 2) {
+            services += ",";
+        }
+        if (i == services_list.length - 2) {
+            services += " and";
+        }
+    }
+    console.log(services);
+    return services; 
+}
