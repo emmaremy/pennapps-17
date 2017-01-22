@@ -72,7 +72,7 @@ var addPersonRow = function (person) {
         "</td> <td>" + person.zipcode + 
         "</td> <td>" + getServicesString(person) + 
         "</td> <td>" + person.notes + 
-        "</td> <td>" + "<a href='#contactForm'><button id='contact_button' value='" + (person.email) + "' " +
+        "</td> <td>" + "<a href='#contactForm'><button id='contact_button' value='" + (person.contact).toString() + "' " +
         "class='btn btn-success btn-sm btn-outline' onclick='enterContactId(this.value)'>Contact</button></a>" +      
         "</tr>" + "<div id =" + "'" + (person.id).toString() + "'" + ">HI THERE</div>"
     $("#people_table").append(html);
