@@ -23,12 +23,12 @@ var submitPerson = function () {
   
   //var services = $("#revServices").val();
   var walk = $("#revWalk").is(':checked');
-  var accompany = $("revAccompany").is(':checked');
+  var accompany = $("#revAccompany").is(':checked');
   var drive = $("#revDrive").is(':checked');
   var pickup = $("#revPickup").is(':checked');
-  var coffee = $("revCoffee").is(':checked');
-  var ed = $("revEd").is(':checked');
-  var resource = $("revResource").is(':checked');
+  var coffee = $("#revCoffee").is(':checked');
+  var ed = $("#revEd").is(':checked');
+  var resource = $("#revResource").is(':checked');
   var notes = $("#revNotes").val();
 
 // Push our first recommendation to the end of the list and assign it a
@@ -91,9 +91,9 @@ var showForm = function (person) {
 }
 
 
+
 var enterContactId = function (email) {
     document.getElementById("revToEmail").value=email;
-    document.theirEmail =contact
 }
 
 var getServicesString = function (person) {
