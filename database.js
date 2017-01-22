@@ -19,7 +19,9 @@ var submitPerson = function () {
   var firstname = $("#revFirst").val();
   var lastname = $("#revLast").val();
   var contact = $("#revContact").val();
-  var services = $("#revServices").val();
+  var zipcode = $("#revZipcode").val();
+  var walk = $("#revWalk").val();
+  var drive = $("#revDrive").val();
   var notes = $("#revNotes").val();
 
 // Push our first recommendation to the end of the list and assign it a
@@ -28,7 +30,9 @@ var submitPerson = function () {
 	    "firstname": firstname,
 	    "lastname": lastname,
 	    "contact": contact,
-	    "services": services,
+      "zipcode": zipcode,
+	    "walk": walk,
+      "drive": drive,
 	    "notes": notes,
 	});
 };
