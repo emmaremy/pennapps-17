@@ -37,3 +37,15 @@ $(window).load(function () {
 
 	$("#peopleForm").submit(submitPerson);
 });
+
+
+people.limitToLast(1).on('child_added', function(childSnapshot) {
+    person = childSnapshot.val();
+
+    $("#name").html(person.firstname)
+    //$("#zipcode").html(person.zipcode) not a thing yet, but should be. 
+    $("#services").html(person.services)
+    $("#notes").html(person.notes)
+
+});
+
