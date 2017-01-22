@@ -23,7 +23,7 @@ var submitPerson = function () {
   
   //var services = $("#revServices").val();
   var walk = $("#revWalk").is(':checked');
-  var accompany = $("revAccompany").is('checked');
+  var accompany = $("revAccompany").is(':checked');
   var drive = $("#revDrive").is(':checked');
   var pickup = $("#revPickup").is(':checked');
   var coffee = $("revCoffee").is(':checked');
