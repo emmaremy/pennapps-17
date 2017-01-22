@@ -69,6 +69,7 @@ var addPersonRow = function (person) {
 };
 
 var showForm = function (person) {
+    console.log('function was called')
     var button = document.getElementById('contact_button');
     var form = document.getElementById((person.id).toString());
     if (button.clicked == true) {
