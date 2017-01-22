@@ -59,10 +59,11 @@ $(window).load(function () {
 });
 
 
-people.limitToLast(10).on('child_added', function(childSnapshot) {
+people.limitToLast(100).on('child_added', function(childSnapshot) {
     person = childSnapshot.val();
     addPersonRow(person);
 });
+
 
 
 var addPersonRow = function (person) {
@@ -71,7 +72,7 @@ var addPersonRow = function (person) {
         "</td> <td>" + person.zipcode + 
         "</td> <td>" + getServicesString(person) + 
         "</td> <td>" + person.notes + 
-        "</td> <td>" + "<a href='#contactForm'><button id='contact_button' value='" + (person.id).toString() + "' " +
+        "</td> <td>" + "<a href='#contactForm'><button id='contact_button' value='" + (person.email) + "' " +
         "class='btn btn-success btn-sm btn-outline' onclick='enterContactId(this.value)'>Contact</button></a>" +      
         "</tr>" + "<div id =" + "'" + (person.id).toString() + "'" + ">HI THERE</div>"
     $("#people_table").append(html);
@@ -90,8 +91,10 @@ var showForm = function (person) {
 }
 
 
-var enterContactId = function (id) {
-    document.getElementById("revID").value=id;
+
+var enterContactId = function (email) {
+    document.getElementById("revToEmail").value=email;
+    document.theirEmail =contact
 }
 
 var getServicesString = function (person) {
