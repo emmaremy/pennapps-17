@@ -62,7 +62,8 @@ var addPersonRow = function (person) {
         "</td> <td>" + person.zipcode + 
         "</td> <td>" + getServicesString(person) + 
         "</td> <td>" + person.notes + 
-        "</td> <td>" + "<button id='contact_button' class='btn btn-success btn-sm btn-outline' onclick='showForm(person)'>Contact</button>" +      
+        "</td> <td>" + "<button id='contact_button' ahref='#contactForm' value='" + (person.id).toString() + "' " +
+        "class='btn btn-success btn-sm btn-outline' onclick='enterContactId(this.value)'>Contact</button>" +      
         "</tr>" + "<div id =" + "'" + (person.id).toString() + "'" + ">HI THERE</div>"
     $("#people_table").append(html);
 
@@ -77,6 +78,11 @@ var showForm = function (person) {
     } else {
         form.style.display = 'none';
     }
+}
+
+
+var enterContactId = function (id) {
+    document.getElementById("revID").value=id;
 }
 
 var getServicesString = function (person) {
