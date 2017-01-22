@@ -59,12 +59,21 @@ var addPersonRow = function (person) {
         "</td> <td>" + person.zipcode + 
         "</td> <td>" + getServicesString(person) + 
         "</td> <td>" + person.notes + 
-        "</td> <td>" + "<button class='btn btn-success btn-sm btn-outline'>Contact</button>" +      
-        "</tr>";
-
+        "</td> <td>" + "<button id='contact_button' class='btn btn-success btn-sm btn-outline' onclick='showForm(person)'>Contact</button>" +      
+        "</tr>" + "<div id ='contact_form'>HI THERE</div>"
     $("#people_table").append(html);
 
 };
+
+var showForm = function (person) {
+    var button = document.getElementById('contact_button');
+    var form = document.getElementById('contact_form');
+    if (button.clicked == true) {
+        form.style.display = 'block';
+    } else {
+        form.style.display = 'none';
+    }
+}
 
 var getServicesString = function (person) {
     
@@ -88,6 +97,5 @@ var getServicesString = function (person) {
             services += " and";
         }
     }
-    console.log(services);
     return services; 
 }
