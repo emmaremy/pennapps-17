@@ -344,7 +344,7 @@
                     </div><p>
                     <div class="form-row">
                         <label>
-                            <span>Email Address: </span><br>
+                            <span>Your Email Address: </span><br>
                             <input type="text" name="yourEmail" id="revYourEmail">
                         </label>
                     </div><p>
@@ -356,8 +356,8 @@
                     </div><p>
                     <div class="form-row">
                         <label>
-                            <span>Volunteer ID:</span><br>
-                            <input type="text" name="volID" id="revID">
+                            <span>Their Email Address:</span><br>
+                            <input type="text" name="toEmail" id="revToEmail">
                         </label>
                     </div><p>
             <div class="form-row">
@@ -370,14 +370,15 @@
 
 					<script type="text/javascript">
 						function emailJS(){
-							console.log("hi")
-							// Change to your service ID, or keep using the default service
+							console.log("this is emailJS");
+
 							var service_id = "default_service";
 							var template_id = "test";
-							emailjs.send(service_id,template_id,{yourName: document.getElementById('revName'), 
-								toEmail: "eliu827@gmail.com"
-								fromEmail: document.getElementById('revYourEmail'),
-								yourMessage: document.getElementById('revMessage'),
+							emailjs.send(service_id,template_id,{
+								yourName: $("#revName").val(), 
+								toEmail: $("#revToEmail").val(),
+								fromEmail: $("#revYourEmail").val(),
+								yourMessage: $("#revMessage").val()
 							});
 						}
 					</script>
